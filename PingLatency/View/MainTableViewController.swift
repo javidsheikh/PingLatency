@@ -13,11 +13,11 @@ class MainTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        let sortButton = UIBarButtonItem(title: "Sort", style: .plain, target: self, action: #selector(sortCellsByLatency))
+        navigationItem.leftBarButtonItem = sortButton
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        let retestAllButton = UIBarButtonItem(title: "Retest All", style: .plain, target: self, action: #selector(retestAll))
+        navigationItem.rightBarButtonItem = retestAllButton
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,6 +46,14 @@ class MainTableViewController: UITableViewController {
         return cell
     }
     */
+
+    @objc func sortCellsByLatency() {
+
+    }
+
+    @objc func retestAll() {
+
+    }
 
     /*
     // Override to support conditional editing of the table view.

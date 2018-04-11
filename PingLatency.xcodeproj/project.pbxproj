@@ -20,6 +20,7 @@
 		F9DBFE68207E1B9A006A2CF0 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DBFE67207E1B9A006A2CF0 /* APIService.swift */; };
 		F9DBFE6A207E1C8E006A2CF0 /* Host.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DBFE69207E1C8E006A2CF0 /* Host.swift */; };
 		F9DBFE72207E218A006A2CF0 /* APIServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DBFE71207E218A006A2CF0 /* APIServiceTests.swift */; };
+		F9DBFE7A207E2B67006A2CF0 /* HostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DBFE79207E2B67006A2CF0 /* HostTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		F9DBFE6F207E218A006A2CF0 /* APIServiceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APIServiceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9DBFE71207E218A006A2CF0 /* APIServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceTests.swift; sourceTree = "<group>"; };
 		F9DBFE73207E218A006A2CF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9DBFE79207E2B67006A2CF0 /* HostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 			children = (
 				F9DBFE4A207E1290006A2CF0 /* Assets */,
 				F9DBFE43207E120A006A2CF0 /* MainTableViewController.swift */,
+				F9DBFE79207E2B67006A2CF0 /* HostTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -361,6 +364,7 @@
 				F9DBFE4C207E12B7006A2CF0 /* NavigationController.swift in Sources */,
 				F9DBFE32207E1186006A2CF0 /* AppDelegate.swift in Sources */,
 				F9DBFE51207E1398006A2CF0 /* SimplePing.m in Sources */,
+				F9DBFE7A207E2B67006A2CF0 /* HostTableViewCell.swift in Sources */,
 				F9DBFE54207E1405006A2CF0 /* PingService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
