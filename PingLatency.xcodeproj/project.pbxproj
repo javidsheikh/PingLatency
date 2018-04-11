@@ -17,10 +17,20 @@
 		F9DBFE54207E1405006A2CF0 /* PingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DBFE53207E1405006A2CF0 /* PingService.swift */; };
 		F9DBFE57207E14BD006A2CF0 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DBFE56207E14BD006A2CF0 /* Result.swift */; };
 		F9DBFE5F207E1587006A2CF0 /* PingServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DBFE5E207E1587006A2CF0 /* PingServiceTests.swift */; };
+		F9DBFE68207E1B9A006A2CF0 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DBFE67207E1B9A006A2CF0 /* APIService.swift */; };
+		F9DBFE6A207E1C8E006A2CF0 /* Host.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DBFE69207E1C8E006A2CF0 /* Host.swift */; };
+		F9DBFE72207E218A006A2CF0 /* APIServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DBFE71207E218A006A2CF0 /* APIServiceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		F9DBFE61207E1587006A2CF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F9DBFE26207E1186006A2CF0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F9DBFE2D207E1186006A2CF0;
+			remoteInfo = PingLatency;
+		};
+		F9DBFE74207E218A006A2CF0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F9DBFE26207E1186006A2CF0 /* Project object */;
 			proxyType = 1;
@@ -46,6 +56,11 @@
 		F9DBFE5C207E1586006A2CF0 /* PingServiceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PingServiceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9DBFE5E207E1587006A2CF0 /* PingServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PingServiceTests.swift; sourceTree = "<group>"; };
 		F9DBFE60207E1587006A2CF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9DBFE67207E1B9A006A2CF0 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		F9DBFE69207E1C8E006A2CF0 /* Host.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Host.swift; sourceTree = "<group>"; };
+		F9DBFE6F207E218A006A2CF0 /* APIServiceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APIServiceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9DBFE71207E218A006A2CF0 /* APIServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceTests.swift; sourceTree = "<group>"; };
+		F9DBFE73207E218A006A2CF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +78,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F9DBFE6C207E218A006A2CF0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -71,6 +93,7 @@
 			children = (
 				F9DBFE30207E1186006A2CF0 /* PingLatency */,
 				F9DBFE5D207E1587006A2CF0 /* PingServiceTests */,
+				F9DBFE70207E218A006A2CF0 /* APIServiceTests */,
 				F9DBFE2F207E1186006A2CF0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -80,6 +103,7 @@
 			children = (
 				F9DBFE2E207E1186006A2CF0 /* PingLatency.app */,
 				F9DBFE5C207E1586006A2CF0 /* PingServiceTests.xctest */,
+				F9DBFE6F207E218A006A2CF0 /* APIServiceTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,6 +123,7 @@
 		F9DBFE45207E122A006A2CF0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F9DBFE69207E1C8E006A2CF0 /* Host.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -134,6 +159,7 @@
 		F9DBFE49207E1269006A2CF0 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				F9DBFE66207E1B80006A2CF0 /* APIService */,
 				F9DBFE4D207E1379006A2CF0 /* PingService */,
 			);
 			path = Services;
@@ -176,6 +202,23 @@
 			path = PingServiceTests;
 			sourceTree = "<group>";
 		};
+		F9DBFE66207E1B80006A2CF0 /* APIService */ = {
+			isa = PBXGroup;
+			children = (
+				F9DBFE67207E1B9A006A2CF0 /* APIService.swift */,
+			);
+			path = APIService;
+			sourceTree = "<group>";
+		};
+		F9DBFE70207E218A006A2CF0 /* APIServiceTests */ = {
+			isa = PBXGroup;
+			children = (
+				F9DBFE71207E218A006A2CF0 /* APIServiceTests.swift */,
+				F9DBFE73207E218A006A2CF0 /* Info.plist */,
+			);
+			path = APIServiceTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -214,6 +257,24 @@
 			productReference = F9DBFE5C207E1586006A2CF0 /* PingServiceTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		F9DBFE6E207E218A006A2CF0 /* APIServiceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F9DBFE76207E218A006A2CF0 /* Build configuration list for PBXNativeTarget "APIServiceTests" */;
+			buildPhases = (
+				F9DBFE6B207E218A006A2CF0 /* Sources */,
+				F9DBFE6C207E218A006A2CF0 /* Frameworks */,
+				F9DBFE6D207E218A006A2CF0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F9DBFE75207E218A006A2CF0 /* PBXTargetDependency */,
+			);
+			name = APIServiceTests;
+			productName = APIServiceTests;
+			productReference = F9DBFE6F207E218A006A2CF0 /* APIServiceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -230,6 +291,11 @@
 						ProvisioningStyle = Automatic;
 					};
 					F9DBFE5B207E1586006A2CF0 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F9DBFE2D207E1186006A2CF0;
+					};
+					F9DBFE6E207E218A006A2CF0 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 						TestTargetID = F9DBFE2D207E1186006A2CF0;
@@ -251,6 +317,7 @@
 			targets = (
 				F9DBFE2D207E1186006A2CF0 /* PingLatency */,
 				F9DBFE5B207E1586006A2CF0 /* PingServiceTests */,
+				F9DBFE6E207E218A006A2CF0 /* APIServiceTests */,
 			);
 		};
 /* End PBXProject section */
@@ -273,6 +340,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F9DBFE6D207E218A006A2CF0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -281,7 +355,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9DBFE57207E14BD006A2CF0 /* Result.swift in Sources */,
+				F9DBFE68207E1B9A006A2CF0 /* APIService.swift in Sources */,
 				F9DBFE44207E120A006A2CF0 /* MainTableViewController.swift in Sources */,
+				F9DBFE6A207E1C8E006A2CF0 /* Host.swift in Sources */,
 				F9DBFE4C207E12B7006A2CF0 /* NavigationController.swift in Sources */,
 				F9DBFE32207E1186006A2CF0 /* AppDelegate.swift in Sources */,
 				F9DBFE51207E1398006A2CF0 /* SimplePing.m in Sources */,
@@ -297,6 +373,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F9DBFE6B207E218A006A2CF0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9DBFE72207E218A006A2CF0 /* APIServiceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -304,6 +388,11 @@
 			isa = PBXTargetDependency;
 			target = F9DBFE2D207E1186006A2CF0 /* PingLatency */;
 			targetProxy = F9DBFE61207E1587006A2CF0 /* PBXContainerItemProxy */;
+		};
+		F9DBFE75207E218A006A2CF0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F9DBFE2D207E1186006A2CF0 /* PingLatency */;
+			targetProxy = F9DBFE74207E218A006A2CF0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -501,6 +590,38 @@
 			};
 			name = Release;
 		};
+		F9DBFE77207E218A006A2CF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VNNCXYWA32;
+				INFOPLIST_FILE = APIServiceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.javidSheikh.APIServiceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PingLatency.app/PingLatency";
+			};
+			name = Debug;
+		};
+		F9DBFE78207E218A006A2CF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VNNCXYWA32;
+				INFOPLIST_FILE = APIServiceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.javidSheikh.APIServiceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PingLatency.app/PingLatency";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -527,6 +648,15 @@
 			buildConfigurations = (
 				F9DBFE64207E1587006A2CF0 /* Debug */,
 				F9DBFE65207E1587006A2CF0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F9DBFE76207E218A006A2CF0 /* Build configuration list for PBXNativeTarget "APIServiceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9DBFE77207E218A006A2CF0 /* Debug */,
+				F9DBFE78207E218A006A2CF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
