@@ -18,9 +18,6 @@ class MainTableViewController: UITableViewController {
         let sortButton = UIBarButtonItem(title: "Sort", style: .plain, target: self, action: #selector(sortCellsByLatency))
         navigationItem.leftBarButtonItem = sortButton
 
-        let retestAllButton = UIBarButtonItem(title: "Retest All", style: .plain, target: self, action: #selector(retestAll))
-        navigationItem.rightBarButtonItem = retestAllButton
-
         let service = APIService(session: URLSession.shared)
         viewModel = HostTableViewModel(apiService: service)
         bindViewModel()
@@ -32,6 +29,11 @@ class MainTableViewController: UITableViewController {
         viewModel.reloadTableView = { [weak self] in
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
+            }
+        }
+        viewModel.displayErrorAlert = { [weak self] message in
+            DispatchQueue.main.async {
+                self?.displayErrorAlert(withMessage: message)
             }
         }
     }
@@ -53,12 +55,15 @@ class MainTableViewController: UITableViewController {
         return HostTableViewCell.cellHeight
     }
 
-    @objc func sortCellsByLatency() {
-        viewModel.sortByLatency()
+    fileprivate func displayErrorAlert(withMessage message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
     }
 
-    @objc func retestAll() {
-
+    @objc func sortCellsByLatency() {
+        viewModel.sortByLatency()
     }
 
 

@@ -26,20 +26,22 @@ class APIService {
         let url = URL(string: urlString)
         let request = URLRequest(url: url!)
         let session = URLSession.shared
-        session.dataTask(with: request) { data, response, error in
-            if let data = data {
-                do {
-                    let hostList = try JSONDecoder().decode([Host].self, from: data)
-                    completion(Result.success(hostList))
-                } catch {
-                    completion(Result.failure(APIError.jsonDecodingError))
+        DispatchQueue.global(qos: .utility).async {
+            session.dataTask(with: request) { data, response, error in
+                if let data = data {
+                    do {
+                        let hostList = try JSONDecoder().decode([Host].self, from: data)
+                        completion(Result.success(hostList))
+                    } catch {
+                        completion(Result.failure(APIError.jsonDecodingError))
+                    }
+                } else if let err = error {
+                    completion(Result.failure(APIError.apiResponseError(err.localizedDescription)))
+                } else {
+                    completion(Result.failure(APIError.dataResponseNil))
                 }
-            } else if let err = error {
-                completion(Result.failure(APIError.apiResponseError(err.localizedDescription)))
-            } else {
-                completion(Result.failure(APIError.dataResponseNil))
             }
+            .resume()
         }
-        .resume()
     }
 }

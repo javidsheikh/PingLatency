@@ -25,7 +25,7 @@ class HostCellViewModel {
     func fetchAverageLatency() {
         PingService.pingHostName(urlText) { [weak self] result in
             switch result {
-            case .success(let latency) :
+            case .success(let latency):
                 self?.latency = latency
                 self?.updateLatency?(latency)
             case .failure(let error):

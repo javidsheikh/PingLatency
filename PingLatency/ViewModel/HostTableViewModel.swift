@@ -26,7 +26,6 @@ class HostTableViewModel {
         return cellViewModels.count
     }
     var reloadTableView: (() -> Void)?
-    var reloadRowAtIndexPath: (() -> Void)?
     var updateLoadingStatus: (() -> Void)?
     var displayErrorAlert: ((String) -> Void)?
 
