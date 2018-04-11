@@ -42,6 +42,7 @@ class HostTableViewCell: UITableViewCell {
         self.viewModel = viewModel
         hostNameLabel.text = viewModel.hostNameText
         urlLabel.text = viewModel.urlText
+        iconImageView.image = viewModel.iconImage
         if let latency = viewModel.latency {
             latencyLabel.text =  "Average Latency: \(latency) ms"
         } else {
