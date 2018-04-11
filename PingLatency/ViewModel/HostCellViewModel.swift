@@ -12,13 +12,9 @@ class HostCellViewModel {
     let hostNameText: String
     let urlText: String
     let imageUrl: String
-    var latencyString: String? {
-        didSet {
-            updateLatency?()
-        }
-    }
-    var updateLatency: (() -> Void)?
-    var latencyError: (() -> Void)?
+    var latency: Double?
+    var updateLatency: ((Double) -> Void)?
+    var latencyError: ((PingError) -> Void)?
 
     init(hostNameText: String, urlText: String, imageUrl: String) {
         self.hostNameText = hostNameText
@@ -30,11 +26,10 @@ class HostCellViewModel {
         PingService.pingHostName(urlText) { [weak self] result in
             switch result {
             case .success(let latency) :
-                print("Average latency for \(self?.hostNameText ?? "") is \(latency) ms")
-                self?.latencyString = String(latency)
+                self?.latency = latency
+                self?.updateLatency?(latency)
             case .failure(let error):
-                print("Unable to fetch latency for \(self?.hostNameText ?? "") - \(error)")
-                self?.latencyError?()
+                self?.latencyError?(error)
             }
         }
     }

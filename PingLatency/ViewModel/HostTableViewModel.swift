@@ -39,6 +39,11 @@ class HostTableViewModel {
         return cellViewModels[indexPath.row]
     }
 
+    func sortByLatency() {
+        cellViewModels.sort { ($0.latency ?? 0.0).isLess(than: ($1.latency ?? 0.0)) }
+        reloadTableView?()
+    }
+
     fileprivate func initModel(withURL urlString: String) {
         apiService.fetchHostList(withURL: urlString) { [weak self] result in
             switch result {

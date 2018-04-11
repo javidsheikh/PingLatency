@@ -48,11 +48,10 @@ class HostTableViewCell: UITableViewCell {
     }
 
     fileprivate func bindViewModel() {
-        viewModel.updateLatency = { [weak self] in
-            let latencyText = self?.viewModel.latencyString ?? "Not Found"
-            self?.latencyLabel.text = "Average Latency: \(latencyText) ms"
+        viewModel.updateLatency = { [weak self] latency in
+            self?.latencyLabel.text = "Average Latency: \(latency) ms"
         }
-        viewModel.latencyError = { [weak self] in
+        viewModel.latencyError = { [weak self] error in
             self?.latencyLabel.text = "Unable to contact host"
         }
     }

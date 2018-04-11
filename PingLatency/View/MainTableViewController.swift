@@ -54,7 +54,7 @@ class MainTableViewController: UITableViewController {
     }
 
     @objc func sortCellsByLatency() {
-
+        viewModel.sortByLatency()
     }
 
     @objc func retestAll() {
