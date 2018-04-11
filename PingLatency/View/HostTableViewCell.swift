@@ -8,16 +8,23 @@
 
 import UIKit
 
+protocol HostTableViewCellDelegate: class {
+    func displayErrorAlert(withMessage message: String)
+}
+
 class HostTableViewCell: UITableViewCell {
 
     @IBOutlet weak var hostNameLabel: UILabel!
     @IBOutlet weak var urlLabel: UILabel!
     @IBOutlet weak var latencyLabel: UILabel!
     @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet weak var loadingOverlay: UIView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
     static let cellHeight: CGFloat = 150.0
     static let reuseIdentifier = "HostTableViewCell"
 
+    weak var delegate: HostTableViewCellDelegate?
     var viewModel: HostCellViewModel!
 
     override func awakeFromNib() {
@@ -35,24 +42,44 @@ class HostTableViewCell: UITableViewCell {
         self.viewModel = viewModel
         hostNameLabel.text = viewModel.hostNameText
         urlLabel.text = viewModel.urlText
-        if let url = URL(string: viewModel.imageUrl) {
-            do {
-                let data = try Data(contentsOf: url)
-                self.iconImageView.image = UIImage(data: data)
-            } catch {
-                // TODO - handle error
-                print("Error retrieving icon image")
-            }
+        if let latency = viewModel.latency {
+            latencyLabel.text =  "Average Latency: \(latency) ms"
+        } else {
+            latencyLabel.text = "Average Latency: -"
         }
         bindViewModel()
     }
 
     fileprivate func bindViewModel() {
         viewModel.updateLatency = { [weak self] latency in
-            self?.latencyLabel.text = "Average Latency: \(latency) ms"
+            DispatchQueue.main.async {
+                self?.latencyLabel.text = "Average Latency: \(latency) ms"
+            }
         }
         viewModel.latencyError = { [weak self] error in
-            self?.latencyLabel.text = "Unable to contact host"
+            DispatchQueue.main.async {
+                self?.delegate?.displayErrorAlert(withMessage: error.localizedDescription)
+            }
+        }
+        viewModel.updateLoadingStatus = { [weak self] in
+            DispatchQueue.main.async {
+                self?.updateLoadingView()
+            }
+        }
+        viewModel.updateIconImage = { [weak self] in
+            DispatchQueue.main.async {
+                self?.iconImageView.image = self?.viewModel.iconImage
+            }
+        }
+    }
+
+    fileprivate func updateLoadingView() {
+        if viewModel.isLoading {
+            activityIndicator.startAnimating()
+            loadingOverlay.isHidden = false
+        } else {
+            activityIndicator.stopAnimating()
+            loadingOverlay.isHidden = true
         }
     }
 

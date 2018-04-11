@@ -63,24 +63,43 @@
                                                 <action selector="retestLatency:" destination="ugs-fk-3Tl" eventType="touchUpInside" id="4j6-q2-XX7"/>
                                             </connections>
                                         </button>
+                                        <view hidden="YES" alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lv9-aw-pXZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="148.5"/>
+                                            <subviews>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="qpD-r3-oTo">
+                                                    <rect key="frame" x="177" y="64" width="20" height="20"/>
+                                                </activityIndicatorView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="qpD-r3-oTo" firstAttribute="centerY" secondItem="Lv9-aw-pXZ" secondAttribute="centerY" id="GQj-Zu-Wh9"/>
+                                                <constraint firstItem="qpD-r3-oTo" firstAttribute="centerX" secondItem="Lv9-aw-pXZ" secondAttribute="centerX" id="azf-0S-spU"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="Ray-Pr-5bw" firstAttribute="top" secondItem="AoQ-OY-dEJ" secondAttribute="top" constant="20" id="0NW-sX-nUw"/>
+                                        <constraint firstAttribute="trailing" secondItem="Lv9-aw-pXZ" secondAttribute="trailing" id="5on-Y4-dI3"/>
+                                        <constraint firstAttribute="bottom" secondItem="Lv9-aw-pXZ" secondAttribute="bottom" id="Ght-Xz-PFk"/>
                                         <constraint firstItem="Ray-Pr-5bw" firstAttribute="leading" secondItem="AoQ-OY-dEJ" secondAttribute="leading" constant="16" id="OwE-vF-0ar"/>
                                         <constraint firstItem="EKb-sj-EkH" firstAttribute="top" secondItem="AoQ-OY-dEJ" secondAttribute="top" id="UJe-ON-vxw"/>
                                         <constraint firstAttribute="bottom" secondItem="EKb-sj-EkH" secondAttribute="bottom" id="VC1-YC-2Ko"/>
                                         <constraint firstAttribute="bottom" secondItem="Ray-Pr-5bw" secondAttribute="bottom" constant="20" id="XgC-fS-PBp"/>
                                         <constraint firstAttribute="trailing" secondItem="EKb-sj-EkH" secondAttribute="trailing" id="gSG-yV-HFS"/>
+                                        <constraint firstItem="Lv9-aw-pXZ" firstAttribute="top" secondItem="AoQ-OY-dEJ" secondAttribute="top" id="lWU-qP-t4R"/>
                                         <constraint firstItem="W1h-SL-VrG" firstAttribute="leading" secondItem="Ray-Pr-5bw" secondAttribute="trailing" constant="15" id="oSD-Rv-Ckk"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="W1h-SL-VrG" secondAttribute="trailing" constant="16" id="rM1-vF-37y"/>
                                         <constraint firstItem="EKb-sj-EkH" firstAttribute="leading" secondItem="AoQ-OY-dEJ" secondAttribute="leading" id="wrh-4Z-FwU"/>
                                         <constraint firstItem="W1h-SL-VrG" firstAttribute="centerY" secondItem="AoQ-OY-dEJ" secondAttribute="centerY" id="xRI-iW-oZK"/>
+                                        <constraint firstItem="Lv9-aw-pXZ" firstAttribute="leading" secondItem="AoQ-OY-dEJ" secondAttribute="leading" id="ypW-nG-z8t"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="activityIndicator" destination="qpD-r3-oTo" id="ooH-dS-A7M"/>
                                     <outlet property="hostNameLabel" destination="Rmb-aE-OX2" id="uQm-yk-YqX"/>
                                     <outlet property="iconImageView" destination="EKb-sj-EkH" id="dwh-17-wF7"/>
                                     <outlet property="latencyLabel" destination="qZ8-51-Hz4" id="spd-u8-N74"/>
+                                    <outlet property="loadingOverlay" destination="Lv9-aw-pXZ" id="FbB-0P-7dZ"/>
                                     <outlet property="urlLabel" destination="yOB-bk-NHQ" id="924-xZ-KaQ"/>
                                 </connections>
                             </tableViewCell>

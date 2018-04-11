@@ -6,6 +6,9 @@
 //  Copyright © 2018 Javid Sheikh. All rights reserved.
 //
 
+import Foundation
+import UIKit
+
 enum APIError: Error {
     case jsonDecodingError
     case apiResponseError(String)
@@ -15,6 +18,7 @@ enum APIError: Error {
 class APIService {
 
     typealias JSONTaskCompletionHandler = (Result<Any, APIError>) -> Void
+    typealias UIImageFetchCompletionHandler = (UIImage) -> Void
 
     private let session: URLSession
 
@@ -42,6 +46,20 @@ class APIService {
                 }
             }
             .resume()
+        }
+    }
+
+    func fetchImage(fromURL urlString: String, completion: @escaping UIImageFetchCompletionHandler) {
+        if let url = URL(string: urlString) {
+            do {
+                let data = try Data(contentsOf: url)
+                guard let image = UIImage(data: data) else { return }
+                completion(image)
+            } catch {
+                // TODO - handle error
+                print("Error retrieving icon image")
+                completion(UIImage())
+            }
         }
     }
 }
