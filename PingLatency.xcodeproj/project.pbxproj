@@ -13,7 +13,21 @@
 		F9DBFE3C207E1186006A2CF0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9DBFE3A207E1186006A2CF0 /* LaunchScreen.storyboard */; };
 		F9DBFE44207E120A006A2CF0 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DBFE43207E120A006A2CF0 /* MainTableViewController.swift */; };
 		F9DBFE4C207E12B7006A2CF0 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DBFE4B207E12B7006A2CF0 /* NavigationController.swift */; };
+		F9DBFE51207E1398006A2CF0 /* SimplePing.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DBFE4F207E1398006A2CF0 /* SimplePing.m */; };
+		F9DBFE54207E1405006A2CF0 /* PingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DBFE53207E1405006A2CF0 /* PingService.swift */; };
+		F9DBFE57207E14BD006A2CF0 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DBFE56207E14BD006A2CF0 /* Result.swift */; };
+		F9DBFE5F207E1587006A2CF0 /* PingServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DBFE5E207E1587006A2CF0 /* PingServiceTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F9DBFE61207E1587006A2CF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F9DBFE26207E1186006A2CF0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F9DBFE2D207E1186006A2CF0;
+			remoteInfo = PingLatency;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		F9DBFE2E207E1186006A2CF0 /* PingLatency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PingLatency.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,10 +38,25 @@
 		F9DBFE3D207E1186006A2CF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9DBFE43207E120A006A2CF0 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		F9DBFE4B207E12B7006A2CF0 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		F9DBFE4E207E1397006A2CF0 /* PingLatency-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PingLatency-Bridging-Header.h"; sourceTree = "<group>"; };
+		F9DBFE4F207E1398006A2CF0 /* SimplePing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimplePing.m; sourceTree = "<group>"; };
+		F9DBFE50207E1398006A2CF0 /* SimplePing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimplePing.h; sourceTree = "<group>"; };
+		F9DBFE53207E1405006A2CF0 /* PingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PingService.swift; sourceTree = "<group>"; };
+		F9DBFE56207E14BD006A2CF0 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		F9DBFE5C207E1586006A2CF0 /* PingServiceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PingServiceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9DBFE5E207E1587006A2CF0 /* PingServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PingServiceTests.swift; sourceTree = "<group>"; };
+		F9DBFE60207E1587006A2CF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		F9DBFE2B207E1186006A2CF0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9DBFE59207E1586006A2CF0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				F9DBFE30207E1186006A2CF0 /* PingLatency */,
+				F9DBFE5D207E1587006A2CF0 /* PingServiceTests */,
 				F9DBFE2F207E1186006A2CF0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				F9DBFE2E207E1186006A2CF0 /* PingLatency.app */,
+				F9DBFE5C207E1586006A2CF0 /* PingServiceTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -94,6 +125,8 @@
 				F9DBFE31207E1186006A2CF0 /* AppDelegate.swift */,
 				F9DBFE3D207E1186006A2CF0 /* Info.plist */,
 				F9DBFE4B207E12B7006A2CF0 /* NavigationController.swift */,
+				F9DBFE4E207E1397006A2CF0 /* PingLatency-Bridging-Header.h */,
+				F9DBFE56207E14BD006A2CF0 /* Result.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -101,6 +134,7 @@
 		F9DBFE49207E1269006A2CF0 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				F9DBFE4D207E1379006A2CF0 /* PingService */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -113,6 +147,33 @@
 				F9DBFE3A207E1186006A2CF0 /* LaunchScreen.storyboard */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		F9DBFE4D207E1379006A2CF0 /* PingService */ = {
+			isa = PBXGroup;
+			children = (
+				F9DBFE55207E144E006A2CF0 /* SimplePing */,
+				F9DBFE53207E1405006A2CF0 /* PingService.swift */,
+			);
+			path = PingService;
+			sourceTree = "<group>";
+		};
+		F9DBFE55207E144E006A2CF0 /* SimplePing */ = {
+			isa = PBXGroup;
+			children = (
+				F9DBFE50207E1398006A2CF0 /* SimplePing.h */,
+				F9DBFE4F207E1398006A2CF0 /* SimplePing.m */,
+			);
+			path = SimplePing;
+			sourceTree = "<group>";
+		};
+		F9DBFE5D207E1587006A2CF0 /* PingServiceTests */ = {
+			isa = PBXGroup;
+			children = (
+				F9DBFE5E207E1587006A2CF0 /* PingServiceTests.swift */,
+				F9DBFE60207E1587006A2CF0 /* Info.plist */,
+			);
+			path = PingServiceTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +196,24 @@
 			productReference = F9DBFE2E207E1186006A2CF0 /* PingLatency.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F9DBFE5B207E1586006A2CF0 /* PingServiceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F9DBFE63207E1587006A2CF0 /* Build configuration list for PBXNativeTarget "PingServiceTests" */;
+			buildPhases = (
+				F9DBFE58207E1586006A2CF0 /* Sources */,
+				F9DBFE59207E1586006A2CF0 /* Frameworks */,
+				F9DBFE5A207E1586006A2CF0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F9DBFE62207E1587006A2CF0 /* PBXTargetDependency */,
+			);
+			name = PingServiceTests;
+			productName = PingServiceTests;
+			productReference = F9DBFE5C207E1586006A2CF0 /* PingServiceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -147,7 +226,13 @@
 				TargetAttributes = {
 					F9DBFE2D207E1186006A2CF0 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
+					};
+					F9DBFE5B207E1586006A2CF0 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F9DBFE2D207E1186006A2CF0;
 					};
 				};
 			};
@@ -165,6 +250,7 @@
 			projectRoot = "";
 			targets = (
 				F9DBFE2D207E1186006A2CF0 /* PingLatency */,
+				F9DBFE5B207E1586006A2CF0 /* PingServiceTests */,
 			);
 		};
 /* End PBXProject section */
@@ -180,6 +266,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F9DBFE5A207E1586006A2CF0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -187,13 +280,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9DBFE57207E14BD006A2CF0 /* Result.swift in Sources */,
 				F9DBFE44207E120A006A2CF0 /* MainTableViewController.swift in Sources */,
 				F9DBFE4C207E12B7006A2CF0 /* NavigationController.swift in Sources */,
 				F9DBFE32207E1186006A2CF0 /* AppDelegate.swift in Sources */,
+				F9DBFE51207E1398006A2CF0 /* SimplePing.m in Sources */,
+				F9DBFE54207E1405006A2CF0 /* PingService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F9DBFE58207E1586006A2CF0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9DBFE5F207E1587006A2CF0 /* PingServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F9DBFE62207E1587006A2CF0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F9DBFE2D207E1186006A2CF0 /* PingLatency */;
+			targetProxy = F9DBFE61207E1587006A2CF0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		F9DBFE35207E1186006A2CF0 /* Main.storyboard */ = {
@@ -326,12 +438,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VNNCXYWA32;
-				INFOPLIST_FILE = PingLatency/Info.plist;
+				INFOPLIST_FILE = PingLatency/Utility/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.javidSheikh.PingLatency;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PingLatency/Utility/PingLatency-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -341,14 +456,48 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VNNCXYWA32;
-				INFOPLIST_FILE = PingLatency/Info.plist;
+				INFOPLIST_FILE = PingLatency/Utility/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.javidSheikh.PingLatency;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PingLatency/Utility/PingLatency-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F9DBFE64207E1587006A2CF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VNNCXYWA32;
+				INFOPLIST_FILE = PingServiceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.javidSheikh.PingServiceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PingLatency.app/PingLatency";
+			};
+			name = Debug;
+		};
+		F9DBFE65207E1587006A2CF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VNNCXYWA32;
+				INFOPLIST_FILE = PingServiceTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.javidSheikh.PingServiceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PingLatency.app/PingLatency";
 			};
 			name = Release;
 		};
@@ -369,6 +518,15 @@
 			buildConfigurations = (
 				F9DBFE41207E1186006A2CF0 /* Debug */,
 				F9DBFE42207E1186006A2CF0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F9DBFE63207E1587006A2CF0 /* Build configuration list for PBXNativeTarget "PingServiceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9DBFE64207E1587006A2CF0 /* Debug */,
+				F9DBFE65207E1587006A2CF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
