@@ -14,7 +14,7 @@ enum APIError: Error {
 
 class APIService {
 
-    typealias JSONTaskCompletionHandler = (Result<Any>) -> Void
+    typealias JSONTaskCompletionHandler = (Result<Any, APIError>) -> Void
 
     private let session: URLSession
 

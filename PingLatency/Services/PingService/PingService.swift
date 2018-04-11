@@ -8,14 +8,14 @@
 
 import Foundation
 
-public enum SimplePingError: Error {
+enum PingError: Error {
     case unexpectedPacket
     case failedWithError(String)
 }
 
 class PingService: NSObject, SimplePingDelegate {
 
-    typealias PingCompletionHandler = (Result<Double>) -> ()
+    typealias PingCompletionHandler = (Result<Double, PingError>) -> ()
 
     static let singleton = PingService()
 
@@ -23,6 +23,7 @@ class PingService: NSObject, SimplePingDelegate {
     var startTime: Date?
     lazy var aggregateLatency: Double = 0
     lazy var pingNumber: Int = 5
+    lazy var totalPings: Int = 5
     var hostname: String?
     var resultCallback: PingCompletionHandler?
 
@@ -32,6 +33,7 @@ class PingService: NSObject, SimplePingDelegate {
 
     fileprivate func pingHostName(_ hostname: String, pingNumber: Int, completion: @escaping PingCompletionHandler) {
         self.pingNumber = pingNumber
+        self.totalPings = pingNumber
         self.hostname = hostname
         resultCallback = completion
         ping(hostname)
@@ -49,12 +51,12 @@ class PingService: NSObject, SimplePingDelegate {
 
     func simplePing(_ pinger: SimplePing, didFailWithError error: Error) {
         pinger.stop()
-        resultCallback?(Result.failure(SimplePingError.failedWithError(error.localizedDescription)))
+        resultCallback?(Result.failure(PingError.failedWithError(error.localizedDescription)))
     }
 
     func simplePing(_ pinger: SimplePing, didReceiveUnexpectedPacket packet: Data) {
         pinger.stop()
-        resultCallback?(Result.failure(SimplePingError.unexpectedPacket))
+        resultCallback?(Result.failure(PingError.unexpectedPacket))
     }
 
     func simplePing(_ pinger: SimplePing, didSendPacket packet: Data, sequenceNumber: UInt16) {
@@ -69,7 +71,10 @@ class PingService: NSObject, SimplePingDelegate {
         if pingNumber > 0 {
             ping(hostname!)
         } else {
-            resultCallback?(Result.success(aggregateLatency / 5))
+            let averageLatency = aggregateLatency / Double(totalPings)
+            let rounded = round(averageLatency)
+            resultCallback?(Result.success(rounded))
+            aggregateLatency = 0
         }
     }
 }

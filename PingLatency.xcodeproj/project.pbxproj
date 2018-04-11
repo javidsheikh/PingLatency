@@ -21,6 +21,8 @@
 		F9DBFE6A207E1C8E006A2CF0 /* Host.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DBFE69207E1C8E006A2CF0 /* Host.swift */; };
 		F9DBFE72207E218A006A2CF0 /* APIServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DBFE71207E218A006A2CF0 /* APIServiceTests.swift */; };
 		F9DBFE7A207E2B67006A2CF0 /* HostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DBFE79207E2B67006A2CF0 /* HostTableViewCell.swift */; };
+		F9DBFE7C207E2DC3006A2CF0 /* HostTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DBFE7B207E2DC3006A2CF0 /* HostTableViewModel.swift */; };
+		F9DBFE7E207E2DD8006A2CF0 /* HostCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DBFE7D207E2DD8006A2CF0 /* HostCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		F9DBFE71207E218A006A2CF0 /* APIServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceTests.swift; sourceTree = "<group>"; };
 		F9DBFE73207E218A006A2CF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9DBFE79207E2B67006A2CF0 /* HostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostTableViewCell.swift; sourceTree = "<group>"; };
+		F9DBFE7B207E2DC3006A2CF0 /* HostTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostTableViewModel.swift; sourceTree = "<group>"; };
+		F9DBFE7D207E2DD8006A2CF0 /* HostCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +137,8 @@
 		F9DBFE46207E1232006A2CF0 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				F9DBFE7B207E2DC3006A2CF0 /* HostTableViewModel.swift */,
+				F9DBFE7D207E2DD8006A2CF0 /* HostCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -358,7 +364,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9DBFE57207E14BD006A2CF0 /* Result.swift in Sources */,
+				F9DBFE7C207E2DC3006A2CF0 /* HostTableViewModel.swift in Sources */,
 				F9DBFE68207E1B9A006A2CF0 /* APIService.swift in Sources */,
+				F9DBFE7E207E2DD8006A2CF0 /* HostCellViewModel.swift in Sources */,
 				F9DBFE44207E120A006A2CF0 /* MainTableViewController.swift in Sources */,
 				F9DBFE6A207E1C8E006A2CF0 /* Host.swift in Sources */,
 				F9DBFE4C207E12B7006A2CF0 /* NavigationController.swift in Sources */,

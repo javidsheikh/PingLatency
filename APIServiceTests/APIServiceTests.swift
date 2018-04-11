@@ -26,7 +26,7 @@ class APIServiceTests: XCTestCase {
     }
 
     func testFetchJSONAndInitHostList() {
-        let urlString = "https://gist.githubusercontent.com/anonymous/290132e587b77155eebe44630fcd12cb/raw/777e85227d0c1c16e466475bb438e0807900155c/sk_hosts"
+        let urlString = HostList.urlString
         weak var promise = expectation(description: "Completion handler called")
         var result: Result<Any>?
 
