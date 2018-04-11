@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		F9DBFE32207E1186006A2CF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DBFE31207E1186006A2CF0 /* AppDelegate.swift */; };
-		F9DBFE34207E1186006A2CF0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DBFE33207E1186006A2CF0 /* ViewController.swift */; };
 		F9DBFE37207E1186006A2CF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9DBFE35207E1186006A2CF0 /* Main.storyboard */; };
 		F9DBFE39207E1186006A2CF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9DBFE38207E1186006A2CF0 /* Assets.xcassets */; };
 		F9DBFE3C207E1186006A2CF0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9DBFE3A207E1186006A2CF0 /* LaunchScreen.storyboard */; };
+		F9DBFE44207E120A006A2CF0 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DBFE43207E120A006A2CF0 /* MainTableViewController.swift */; };
+		F9DBFE4C207E12B7006A2CF0 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DBFE4B207E12B7006A2CF0 /* NavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F9DBFE2E207E1186006A2CF0 /* PingLatency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PingLatency.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9DBFE31207E1186006A2CF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F9DBFE33207E1186006A2CF0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F9DBFE36207E1186006A2CF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F9DBFE38207E1186006A2CF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F9DBFE3B207E1186006A2CF0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F9DBFE3D207E1186006A2CF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9DBFE43207E120A006A2CF0 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		F9DBFE4B207E12B7006A2CF0 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,63 @@
 		F9DBFE30207E1186006A2CF0 /* PingLatency */ = {
 			isa = PBXGroup;
 			children = (
+				F9DBFE49207E1269006A2CF0 /* Services */,
+				F9DBFE48207E125C006A2CF0 /* Utility */,
+				F9DBFE47207E123B006A2CF0 /* View */,
+				F9DBFE45207E122A006A2CF0 /* Model */,
+				F9DBFE46207E1232006A2CF0 /* ViewModel */,
+			);
+			path = PingLatency;
+			sourceTree = "<group>";
+		};
+		F9DBFE45207E122A006A2CF0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F9DBFE46207E1232006A2CF0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F9DBFE47207E123B006A2CF0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F9DBFE4A207E1290006A2CF0 /* Assets */,
+				F9DBFE43207E120A006A2CF0 /* MainTableViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F9DBFE48207E125C006A2CF0 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
 				F9DBFE31207E1186006A2CF0 /* AppDelegate.swift */,
-				F9DBFE33207E1186006A2CF0 /* ViewController.swift */,
+				F9DBFE3D207E1186006A2CF0 /* Info.plist */,
+				F9DBFE4B207E12B7006A2CF0 /* NavigationController.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		F9DBFE49207E1269006A2CF0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F9DBFE4A207E1290006A2CF0 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
 				F9DBFE35207E1186006A2CF0 /* Main.storyboard */,
 				F9DBFE38207E1186006A2CF0 /* Assets.xcassets */,
 				F9DBFE3A207E1186006A2CF0 /* LaunchScreen.storyboard */,
-				F9DBFE3D207E1186006A2CF0 /* Info.plist */,
 			);
-			path = PingLatency;
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,7 +187,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9DBFE34207E1186006A2CF0 /* ViewController.swift in Sources */,
+				F9DBFE44207E120A006A2CF0 /* MainTableViewController.swift in Sources */,
+				F9DBFE4C207E12B7006A2CF0 /* NavigationController.swift in Sources */,
 				F9DBFE32207E1186006A2CF0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
