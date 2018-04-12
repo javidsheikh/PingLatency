@@ -28,7 +28,7 @@ class APIServiceTests: XCTestCase {
     func testFetchJSONAndInitHostList() {
         let urlString = HostList.urlString
         weak var promise = expectation(description: "Completion handler called")
-        var result: Result<Any>?
+        var result: Result<Any, APIError>?
 
         sut.fetchHostList(withURL: urlString, completion: { res in
             result = res
@@ -44,6 +44,23 @@ class APIServiceTests: XCTestCase {
         case .failure(let error):
             XCTFail(error.localizedDescription)
         }
+    }
+
+    func testFetchImageDownload() {
+        let iconUrl = "https://pages.ebay.com/favicon.ico"
+        weak var promise = expectation(description: "Completion handler called")
+        var image: UIImage?
+
+        sut.fetchImage(fromURL: iconUrl) { download in
+            image = download
+            promise?.fulfill()
+        }
+
+        waitForExpectations(timeout: 10.0, handler: nil)
+
+
+        guard let img = image else { return XCTFail("Unable to init image") }
+        XCTAssert((img as Any) is UIImage, "Image successfully init")
     }
     
 }

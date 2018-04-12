@@ -73,6 +73,7 @@ class MainTableViewController: UITableViewController, HostTableViewCellDelegate 
         let cellViewModel = viewModel.getCellViewModel(forIndexPath: indexPath)
         cell.delegate = self
         cell.setUpCell(withViewModel: cellViewModel)
+        cellViewModel.startIconImageDownload()
 
         return cell
     }

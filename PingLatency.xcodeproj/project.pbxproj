@@ -119,8 +119,8 @@
 			children = (
 				F9DBFE49207E1269006A2CF0 /* Services */,
 				F9DBFE48207E125C006A2CF0 /* Utility */,
-				F9DBFE47207E123B006A2CF0 /* View */,
 				F9DBFE45207E122A006A2CF0 /* Model */,
+				F9DBFE47207E123B006A2CF0 /* View */,
 				F9DBFE46207E1232006A2CF0 /* ViewModel */,
 			);
 			path = PingLatency;

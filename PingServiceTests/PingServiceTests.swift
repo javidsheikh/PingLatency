@@ -24,7 +24,7 @@ class PingServiceTests: XCTestCase {
     func testPingForValidHostName() {
         let hostName = "www.google.com"
         let promise = expectation(description: "Completion handler called")
-        var result: Result<Double>?
+        var result: Result<Double, PingError>?
 
         PingService.pingHostName(hostName) { res in
             result = res
@@ -45,7 +45,7 @@ class PingServiceTests: XCTestCase {
     func testPingForInvalidHostName() {
         let hostName = "abcdefg"
         let promise = expectation(description: "Completion handler called")
-        var result: Result<Double>?
+        var result: Result<Double, PingError>?
 
         PingService.pingHostName(hostName) { res in
             result = res

@@ -35,7 +35,6 @@ class HostCellViewModel {
         self.urlText = urlText
         self.iconURL = iconURL
         self.apiService = apiService
-        startIconImageDownload()
     }
 
     func fetchAverageLatency() {
